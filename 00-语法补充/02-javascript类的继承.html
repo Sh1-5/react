@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 面向对象三大特性：封装/继承/多态
+      // 继承：1.减少重复代码 2.多态的前提
+      class Person {
+        constructor(name, age) {
+          this.name = name
+          this.age = age
+        }
+        running() {
+          console.log(`${this.name} running`)
+        }
+      }
+
+      // class Student {
+      //   constructor(name, age, sno) {
+      //     this.name = name
+      //     this.age = age
+      //     this.sno = sno
+      //   }
+      //   running() {
+      //     console.log(`${this.name} running`)
+      //   }
+      //   studying() {
+      //     console.log(`${this.name} studying`)
+      //   }
+      // }
+
+      class Student extends Person {
+        constructor(name, age, sno) {
+          super(name, age)
+          this.sno = sno
+        }
+        studying() {
+          console.log(`${this.name} studying`)
+        }
+      }
+      let s = new Student('kobe', 18, '001')
+      console.log(s.name, s.age, s.sno)
+      s.running()
+      s.studying()
+
+      // class Teacher{
+      //   constructor(name, age, tno) {
+      //     this.name = name
+      //     this.age = age
+      //     this.tno = tno
+      //   }
+      //   running() {
+      //     console.log(`${this.name} running`)
+      //   }
+      //   teaching() {
+      //     console.log(`${this.name} teaching`)
+      //   }
+      // }
+
+      class Teacher extends Person {
+        constructor(name, age, tno) {
+          super(name, age)
+          this.tno = tno
+        }
+        teaching() {
+          console.log(`${this.name} teaching`)
+        }
+      }
+      let t = new Teacher('james', 38, '010')
+      console.log(t.name, t.age, t.tno)
+      t.running()
+      t.teaching()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- 添加React依赖 -->
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+      let message = 'Hello World'
+
+      function changeMessage() {
+        message = 'Hello React'
+        render()
+      }
+
+      function render() {
+        ReactDOM.render(
+          // 只能有一个根元素
+          <div>
+            <h1>{message}</h1>
+            <button onClick={changeMessage}>改变文本</button>
+          </div>,
+          document.getElementById('app')
+        )
+      }
+
+      render()
+    </script>
+  </body>
+</html>

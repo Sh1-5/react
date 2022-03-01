@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+      // 封装App组件
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          // this.message = 'Hello World'
+          this.state = {
+            message: 'Hello World'
+          }
+        }
+        render() {
+          return (
+            <div>
+              {/*<h1>{this.message}</h1>*/}
+              <h1>{this.state.message}</h1>
+              <button onClick={this.changeMessage}>改变文本</button>
+            </div>
+          )
+        }
+        changeMessage = () => {
+          // this.message = 'Hello React'
+          this.setState({
+            message: 'Hello React'
+          })
+        }
+      }
+
+      // 渲染组件
+      ReactDOM.render(<App />, document.getElementById('app'))
+    </script>
+  </body>
+</html>

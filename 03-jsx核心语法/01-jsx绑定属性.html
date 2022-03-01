@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            title: 'world',
+            imgUrl:
+              'https://img2.baidu.com/it/u=1700096943,4150168257&fm=253&fmt=auto&app=120&f=PNG?w=432&h=432',
+            hrefUrl: 'http://www.baidu.com',
+            active: true
+          }
+        }
+        render() {
+          const { title, imgUrl, hrefUrl, active } = this.state
+          return (
+            <div>
+              <h1 title="hello">Hello</h1>
+              <h1 title={'hello'}>Hello</h1>
+              <h1 title={title}>World</h1>
+              <img src={imgUrl} alt="" />
+              <a href={hrefUrl} target="_blank">
+                百度
+              </a>
+              <div className={'a b' + (active ? ' active' : '')}>绑定class</div>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById('app'))
+    </script>
+  </body>
+</html>

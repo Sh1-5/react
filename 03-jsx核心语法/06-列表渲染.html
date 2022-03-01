@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="../js/babel.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            movies: ['星际穿越', '火星救援', '流浪地球'],
+            numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+          }
+        }
+        render() {
+          return (
+            <div>
+              <h1>电影列表</h1>
+              <ul>
+                {this.state.movies.map((item) => {
+                  return <li>{item}</li>
+                })}
+              </ul>
+              <h1>数字列表（过滤）</h1>
+              <ul>
+                {this.state.numbers
+                  .filter((item) => {
+                    return item > 5
+                  })
+                  .map((item) => {
+                    return <li>{item}</li>
+                  })}
+              </ul>
+              <h1>数字列表（截取）</h1>
+              <ul>
+                {this.state.numbers.slice(0, 4).map((item) => {
+                  return <li>{item}</li>
+                })}
+              </ul>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById('app'))
+    </script>
+  </body>
+</html>
