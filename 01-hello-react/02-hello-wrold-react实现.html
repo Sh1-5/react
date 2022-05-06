@@ -10,9 +10,15 @@
     <div id="app"></div>
 
     <!-- 添加React依赖 -->
-    <script src="../js/react.js"></script>
-    <script src="../js/react-dom.js"></script>
-    <script src="../js/babel.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     <script type="text/babel">
       let message = 'Hello World'
@@ -23,13 +29,12 @@
       }
 
       function render() {
-        ReactDOM.render(
+        ReactDOM.createRoot(document.getElementById('app')).render(
           // 只能有一个根元素
           <div>
             <h1>{message}</h1>
             <button onClick={changeMessage}>改变文本</button>
-          </div>,
-          document.getElementById('app')
+          </div>
         )
       }
 
