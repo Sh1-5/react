@@ -31,9 +31,9 @@
           const { isLogin } = this.state
           let welcome = null
           if (isLogin) {
-            welcome = <h1>欢迎回来</h1>
+            welcome = <h2>欢迎回来</h2>
           } else {
-            welcome = <h1>请先登录</h1>
+            welcome = <h2>请先登录</h2>
           }
           return (
             <div>
@@ -42,7 +42,7 @@
                 {isLogin ? '退出' : '登录'}
               </button>
               <hr />
-              {isLogin && <h1>你好啊，React</h1>}
+              {isLogin && <h2>你好啊，React</h2>}
             </div>
           )
         }

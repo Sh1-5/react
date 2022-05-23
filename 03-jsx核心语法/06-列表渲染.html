@@ -31,13 +31,13 @@
         render() {
           return (
             <div>
-              <h1>电影列表</h1>
+              <h2>电影列表</h2>
               <ul>
                 {this.state.movies.map((item) => {
                   return <li>{item}</li>
                 })}
               </ul>
-              <h1>数字列表（过滤）</h1>
+              <h2>数字列表（过滤）</h2>
               <ul>
                 {this.state.numbers
                   .filter((item) => {
@@ -47,7 +47,7 @@
                     return <li>{item}</li>
                   })}
               </ul>
-              <h1>数字列表（截取）</h1>
+              <h2>数字列表（截取）</h2>
               <ul>
                 {this.state.numbers.slice(0, 4).map((item) => {
                   return <li>{item}</li>

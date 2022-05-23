@@ -122,12 +122,12 @@
                   })}
                 </tbody>
               </table>
-              <h1>{this.getTotalPrice()}</h1>
+              <h2>{this.getTotalPrice()}</h2>
             </div>
           )
         }
         renderEmptyTip() {
-          return <h1>购物车为空</h1>
+          return <h2>购物车为空</h2>
         }
         render() {
           return this.state.books.length

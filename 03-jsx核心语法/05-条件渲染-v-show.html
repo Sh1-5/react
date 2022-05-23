@@ -31,9 +31,9 @@
           const { isLogin } = this.state
           return (
             <div>
-              <h1 style={{ display: isLogin ? 'block' : 'none' }}>
+              <h2 style={{ display: isLogin ? 'block' : 'none' }}>
                 你好啊，React
-              </h1>
+              </h2>
               <button onClick={() => this.handleClick()}>
                 {isLogin ? '退出' : '登录'}
               </button>
