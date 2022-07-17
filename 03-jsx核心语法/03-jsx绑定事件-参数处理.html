@@ -31,7 +31,7 @@
           const { movies } = this.state
           return (
             <div>
-              <button onClick={this.handleClick}>按钮</button>
+              <button onClick={(e) => this.handleClick(e)}>按钮</button>
               <ul>
                 {movies.map((item, index, arr) => {
                   return (
@@ -48,8 +48,8 @@
             </div>
           )
         }
-        handleClick = (event) => {
-          console.log('按钮发生了点击', event)
+        handleClick(e) {
+          console.log('按钮发生了点击', e)
         }
         liClick(item, index, e) {
           console.log('li发生了点击', item, index, e)
